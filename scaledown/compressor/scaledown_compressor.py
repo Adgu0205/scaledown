@@ -73,8 +73,9 @@ class ScaleDownCompressor(BaseCompressor):
         }
 
         try:
+            full_url=f"{self.api_url}/compress/raw"
             response = requests.post(
-                 self.api_url,
+                 full_url,
                  headers=headers,
                  json=payload
             )
