@@ -1,0 +1,255 @@
+.user-form-page {
+    background-color: black;
+    color: var(--heading-color);
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Changed from center to allow scrolling if needed */
+    padding: 2rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /* Page level scroll */
+}
+
+/* Main Grid Container */
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Tile Component */
+.tile {
+    background: #111;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 380px;
+    /* Ensure visual uniformity */
+    position: relative;
+    overflow: hidden;
+    /* No internal scroll */
+}
+
+.tile h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    border-bottom: 1px solid #222;
+    padding-bottom: 0.5rem;
+}
+
+.tile label {
+    color: #ccc;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-size: 0.9rem;
+}
+
+/* Form Groups & Inputs */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-group-row .half {
+    width: 50%;
+}
+
+.user-form-page input,
+.user-form-page select {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--heading-color);
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+.user-form-page input:focus,
+.user-form-page select:focus {
+    background: #222;
+    border-color: #FF385C;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 56, 92, 0.2);
+}
+
+.input-with-unit {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.input-with-unit input {
+    flex: 2;
+}
+
+.input-with-unit select,
+.input-with-unit .small-input {
+    flex: 1;
+}
+
+/* Standardized Option Grids */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+/* Single column vertical options for specific tiles */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Button & Option Standardization */
+.option-btn {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #eee;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+}
+
+.option-btn:hover {
+    background: #222;
+    border-color: #666;
+}
+
+.option-btn.active {
+    background: rgba(255, 56, 92, 0.15);
+    border-color: #FF385C;
+    color: var(--heading-color);
+    font-weight: 600;
+}
+
+/* Specific Tags Layout */
+.tags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 0.5rem;
+}
+
+/* BMI Display */
+.bmi-display {
+    margin-top: auto;
+    background: #1a1a1a;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+.bmi-val {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+}
+
+.bmi-cat {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0.2rem 0;
+}
+
+.bmi-cat.underweight {
+    color: #facc15;
+}
+
+.bmi-cat.normal {
+    color: #22c55e;
+}
+
+.bmi-cat.overweight {
+    color: #f97316;
+}
+
+.bmi-cat.obese {
+    color: #ef4444;
+}
+
+.bmi-desc {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Action Buttons */
+.action-btn {
+    background: #FF385C;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    transition: transform 0.1s;
+}
+
+.action-btn:hover {
+    transform: scale(1.02);
+}
+
+.action-btn.fitbit {
+    background: #00B0B9;
+}
+
+.action-btn.secondary {
+    background: transparent;
+    border: 1px solid #444;
+    color: #ccc;
+}
+
+.action-btn.secondary:hover {
+    border-color: #fff;
+}
+
+/* Responsive Rules */
+/* Large screens: 3 columns (handled by auto-fit minmax 350px) */
+
+/* Medium screens: 2 columns */
+@media (max-width: 1100px) {
+    .form-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Small screens: 1 column */
+@media (max-width: 768px) {
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+
+    .user-form-page {
+        padding: 1rem;
+    }
+}
