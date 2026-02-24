@@ -2,8 +2,6 @@ Vita-state
 
 A comprehensive Health and Wellness Dashboard providing AI-powered insights into fitness, nutrition, and daily sleep routines. It automatically correlates health metrics (like Fitbit data and sleep cycles) through Large Language Models to offer actionable health advice.
 
-![Vita-state Dashboard](https://vita-state.netlify.app/)
-
 Core Features
 
 Holistic AI Insights: Context-aware AI analysis that monitors sleep schedules, daily steps, and workout records to summarize daily well-being.
